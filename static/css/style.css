@@ -1,0 +1,1058 @@
+/* =========================================================
+   IDMIS — Office of the Data Protection Commissioner (ODPC)
+   Republic of Kenya — Sleek Modern Enterprise Design System
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Fraunces:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+    /* Enterprise Palette - ODPC Sovereign Colors */
+    --odpc-obsidian: #050B17;
+    --odpc-navy: #0B192E;
+    --odpc-navy-800: #0F223D;
+    --odpc-navy-700: #162E52;
+    --odpc-navy-600: #1E3A66;
+    --odpc-royal: #1B449C;
+
+    /* Highlight Accents */
+    --odpc-teal: #00B4F5;
+    --odpc-teal-dark: #0084B8;
+    --odpc-teal-glow: rgba(0, 180, 245, 0.4);
+    --odpc-teal-100: #E6F7FF;
+    --odpc-teal-50: #F0F9FF;
+    
+    --odpc-gold: #D4AF37;
+    --odpc-gold-amber: #C59B27;
+    --odpc-gold-light: #FFFBF0;
+    --odpc-gold-glow: rgba(212, 175, 55, 0.35);
+
+    /* Neutrals & Surfaces */
+    --odpc-ink: #0F172A;
+    --odpc-ink-muted: #334155;
+    --odpc-slate: #475569;
+    --odpc-slate-400: #94A3B8;
+    --odpc-slate-200: #E2E8F0;
+    --odpc-slate-100: #F1F5F9;
+    --odpc-bg: #F8FAFC;
+    --odpc-card: #FFFFFF;
+    --odpc-line: #E2E8F0;
+
+    /* System Status */
+    --odpc-danger: #EF4444;
+    --odpc-warn: #F59E0B;
+    --odpc-ok: #10B981;
+
+    /* Geometry & Shadows */
+    --odpc-radius-sm: 8px;
+    --odpc-radius: 12px;
+    --odpc-radius-lg: 20px;
+    --odpc-radius-xl: 24px;
+    
+    --odpc-shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.04);
+    --odpc-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+    --odpc-shadow-lg: 0 20px 40px -10px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+    --odpc-shadow-glow: 0 0 35px rgba(0, 180, 245, 0.22);
+
+    /* Typography */
+    --odpc-font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --odpc-font-title: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --odpc-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --odpc-font-serif: 'Fraunces', Georgia, serif;
+    --odpc-font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--odpc-font-body);
+    background: var(--odpc-bg);
+    color: var(--odpc-ink);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--odpc-font-display);
+    letter-spacing: -0.02em;
+}
+
+.mono {
+    font-family: var(--odpc-font-mono);
+    letter-spacing: .02em;
+}
+
+a {
+    color: var(--odpc-teal-dark);
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+    color: var(--odpc-teal);
+}
+
+:focus-visible {
+    outline: 2.5px solid var(--odpc-teal);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   Sleek Glassmorphism & Utility Effects
+   ========================================================= */
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel-dark {
+    background: rgba(15, 34, 61, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card_bg_blur {
+    background: rgba(255, 255, 255, .07) !important;
+    border: 1px solid rgba(255, 255, 255, .15) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.text-gradient-cyan {
+    background: linear-gradient(135deg, #FFFFFF 30%, var(--odpc-teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #FFF0C2 0%, var(--odpc-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================================================
+   Top Banner — Republic of Kenya Official Bar
+   ========================================================= */
+
+.public-topbar {
+    background: var(--odpc-obsidian);
+    color: #94A3B8;
+    font-size: 0.78rem;
+    padding: 0.45rem 0;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.public-topbar a {
+    color: #CBD5E1;
+    font-weight: 500;
+}
+
+.public-topbar a:hover {
+    color: var(--odpc-teal);
+}
+
+.public-topbar .gov-flag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #F8FAFC;
+    font-weight: 600;
+}
+
+/* =========================================================
+   Navbar — Modern Glassmorphic Sticky Header
+   ========================================================= */
+
+.public-navbar {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--odpc-line);
+    transition: all 0.3s ease;
+    z-index: 1020;
+}
+
+.odpc-wordmark {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+}
+
+.odpc-wordmark img {
+    height: 44px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+    transition: transform 0.25s ease;
+}
+
+.odpc-wordmark:hover img {
+    transform: scale(1.04);
+}
+
+.odpc-wordmark .name {
+    font-family: var(--odpc-font-title);
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--odpc-navy-800);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.odpc-wordmark .name .version-badge {
+    font-size: 0.58rem;
+    font-family: var(--odpc-font-mono);
+    background: var(--odpc-teal-100);
+    color: var(--odpc-teal-dark);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.odpc-wordmark .tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--odpc-slate);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Navbar Links */
+.public-navbar .nav-link {
+    color: var(--odpc-navy-700);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: var(--odpc-radius-sm);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.public-navbar .nav-link:hover {
+    color: var(--odpc-teal-dark);
+    background: rgba(0, 180, 245, 0.06);
+}
+
+.public-navbar .nav-link.active {
+    color: var(--odpc-royal);
+    background: rgba(27, 68, 156, 0.08);
+    font-weight: 700;
+}
+
+/* Force collapse at 1280px breakpoint */
+@media (max-width: 1279.98px) {
+    .navbar-collapse {
+        display: none !important;
+    }
+    .navbar-toggler {
+        display: block !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+    .navbar-nav {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.35rem !important;
+    }
+}
+
+/* =========================================================
+   Buttons & Micro-interactions
+   ========================================================= */
+
+.btn-odpc {
+    background: linear-gradient(135deg, var(--odpc-teal) 0%, var(--odpc-teal-dark) 100%);
+    border: none;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    border-radius: var(--odpc-radius-sm);
+    padding: 0.55rem 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 180, 245, 0.25);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-odpc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 180, 245, 0.38);
+    color: #FFFFFF !important;
+}
+
+.btn-odpc-outline {
+    background: transparent;
+    border: 1.5px solid var(--odpc-teal-dark);
+    color: var(--odpc-teal-dark) !important;
+    font-weight: 700;
+    border-radius: var(--odpc-radius-sm);
+    padding: 0.5rem 1.25rem;
+    transition: all 0.25s ease;
+}
+
+.btn-odpc-outline:hover {
+    background: var(--odpc-teal-100);
+    border-color: var(--odpc-teal);
+    color: var(--odpc-navy-800) !important;
+    transform: translateY(-1px);
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #E2B94A 0%, var(--odpc-gold-amber) 100%);
+    border: none;
+    color: var(--odpc-obsidian) !important;
+    font-weight: 800;
+    border-radius: var(--odpc-radius-sm);
+    padding: 0.65rem 1.35rem;
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45);
+    color: var(--odpc-obsidian) !important;
+}
+
+.btn-navy {
+    background: var(--odpc-navy-800);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF !important;
+    font-weight: 700;
+    border-radius: var(--odpc-radius-sm);
+    padding: 0.65rem 1.35rem;
+    transition: all 0.25s ease;
+}
+
+.btn-navy:hover {
+    background: var(--odpc-navy-700);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(11, 25, 46, 0.4);
+}
+
+/* =========================================================
+   Hero Section — Modern Obsidian Radial Mesh Gradient
+   ========================================================= */
+
+.odpc-hero {
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(0, 180, 245, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
+        linear-gradient(135deg, var(--odpc-obsidian) 0%, var(--odpc-navy) 60%, #06101E 100%);
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    padding-top: 3rem;
+    padding-bottom: 4.5rem;
+    border-bottom: 1px solid rgba(0, 180, 245, 0.2);
+}
+
+.odpc-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+.badge-hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    padding: 0.45rem 1rem;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #E2E8F0;
+}
+
+.badge-hero-pill .status-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--odpc-ok);
+    box-shadow: 0 0 10px var(--odpc-ok);
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.odpc-hero h1 {
+    font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.03em;
+}
+
+.odpc-stat {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--odpc-radius);
+    padding: 0.9rem 1.1rem;
+    backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.odpc-stat:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 180, 245, 0.35);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.odpc-stat .num {
+    font-family: var(--odpc-font-title);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--odpc-teal);
+    line-height: 1.05;
+}
+
+.odpc-stat .lbl {
+    font-size: 0.7rem;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* =========================================================
+   Objectives Strip — Sleek Frosted Glass Container
+   ========================================================= */
+
+.objectives-strip {
+    background: #ffffff;
+    border-bottom: 1px solid var(--odpc-line);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+}
+
+.objective-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--odpc-radius);
+    transition: background 0.2s ease;
+}
+
+.objective-item:hover {
+    background: var(--odpc-teal-50);
+}
+
+.objective-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--odpc-navy-700) 0%, var(--odpc-royal) 100%);
+    color: var(--odpc-teal);
+    font-size: 1.15rem;
+    box-shadow: 0 4px 10px rgba(11, 25, 46, 0.15);
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.objective-item:hover .objective-circle {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.objective-item span.small {
+    color: var(--odpc-navy-800);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   Modules Section — Modern 11-Module Grid
+   ========================================================= */
+
+#modules {
+    position: relative;
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #80a9d1 0%, #EEF2F6 100%);
+    overflow: hidden;
+}
+
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--odpc-royal);
+    background: rgba(27, 68, 156, 0.08);
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    margin-bottom: 0.85rem;
+}
+
+.module-card {
+    border-radius: var(--odpc-radius-lg);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: #FFFFFF;
+    padding: 1.65rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--odpc-shadow-sm);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.module-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--odpc-teal), var(--odpc-royal));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--odpc-shadow-lg);
+    border-color: rgba(0, 180, 245, 0.4);
+}
+
+.module-card:hover::before {
+    opacity: 1;
+}
+
+.module-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--odpc-teal-100);
+    color: var(--odpc-teal-dark);
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.module-card:hover .module-icon {
+    transform: scale(1.08);
+    background: var(--odpc-teal);
+    color: #FFFFFF;
+}
+
+.module-code {
+    font-family: var(--odpc-font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--odpc-royal);
+    background: rgba(27, 68, 156, 0.08);
+    padding: 2px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.module-card h5 {
+    color: var(--odpc-navy-800);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.module-card p {
+    color: var(--odpc-slate);
+    font-size: 0.86rem;
+    line-height: 1.55;
+}
+
+.module-card a.action-link {
+    margin-top: auto;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--odpc-royal);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.module-card a.action-link:hover {
+    gap: 10px;
+    color: var(--odpc-teal-dark);
+}
+
+/* Featured Module Highlight Card (Lodge Complaint) */
+.module-card-featured {
+    background: linear-gradient(135deg, var(--odpc-navy-800) 0%, var(--odpc-royal) 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.module-card-featured h5 {
+    color: #FFFFFF;
+}
+
+.module-card-featured p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.module-card-featured .module-icon {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--odpc-teal);
+}
+
+.module-card-featured:hover .module-icon {
+    background: var(--odpc-gold);
+    color: var(--odpc-obsidian);
+}
+
+/* =========================================================
+   Public Register Directory Preview Section
+   ========================================================= */
+
+.public-register-strip {
+    background: #FFFFFF;
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--odpc-line);
+    border-bottom: 1px solid var(--odpc-line);
+}
+
+.table-enterprise {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.table-enterprise thead th {
+    background: var(--odpc-slate-100);
+    color: var(--odpc-navy-800);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.85rem 1rem;
+    border: none;
+}
+
+.table-enterprise tbody tr {
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table-enterprise tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.table-enterprise td {
+    padding: 1rem;
+    vertical-align: middle;
+    border: none;
+}
+
+.table-enterprise td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table-enterprise td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* =========================================================
+   Legal Framework Section — Data Protection Act, 2019
+   ========================================================= */
+
+.idmis-framework {
+    position: relative;
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--odpc-obsidian) 0%, var(--odpc-navy-800) 50%, var(--odpc-navy) 100%);
+    color: #FFFFFF;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.idmis-framework::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    right: -200px;
+    bottom: -200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 180, 245, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.framework-content h2 {
+    color: #FFFFFF;
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+}
+
+.framework-content h2 strong {
+    color: var(--odpc-teal);
+    display: block;
+}
+
+.framework-card {
+    position: relative;
+    min-height: 195px;
+    padding: 1.5rem;
+    border-radius: var(--odpc-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.framework-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--odpc-teal), transparent);
+    opacity: 0.6;
+    border-top-left-radius: var(--odpc-radius-lg);
+    border-top-right-radius: var(--odpc-radius-lg);
+}
+
+.framework-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 180, 245, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.framework-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 180, 245, 0.15);
+    border: 1px solid rgba(0, 180, 245, 0.3);
+    color: var(--odpc-teal);
+    font-size: 1.2rem;
+    margin-bottom: 1.1rem;
+}
+
+.framework-number {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    color: rgba(255, 255, 255, 0.22);
+    font-family: var(--odpc-font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.framework-card h6 {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.framework-card p {
+    color: #94A3B8;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.card-arrow {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 1rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: all 0.25s ease;
+}
+
+.framework-card:hover .card-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+    color: var(--odpc-teal);
+}
+
+/* =========================================================
+   Footer — Enterprise Sovereign Footer
+   ========================================================= */
+
+.footer-odpc {
+    background: var(--odpc-obsidian);
+    color: #94A3B8;
+    padding-top: 4.5rem;
+    padding-bottom: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-odpc h6 {
+    color: #FFFFFF;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+.footer-odpc a {
+    color: #CBD5E1;
+    transition: color 0.2s ease;
+}
+
+.footer-odpc a:hover {
+    color: var(--odpc-teal);
+}
+
+.footer-odpc hr {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* =========================================================
+   Retained Portal & Dashboard Components
+   (Guarantees full compatibility across all app views)
+   ========================================================= */
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+.app-sidebar {
+    width: 250px;
+    flex: 0 0 250px;
+    background: var(--odpc-navy-800);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.app-sidebar .brand {
+    padding: 1.2rem 1.1rem 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-sidebar .brand .name { color: #fff; }
+.app-sidebar .brand .tag { color: #9FB4C6; }
+
+.app-sidebar .portal-pill {
+    display: inline-block;
+    font-size: .62rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    background: rgba(0, 180, 245, .18);
+    color: var(--odpc-teal);
+    padding: .15rem .5rem;
+    border-radius: 20px;
+    margin-top: .5rem;
+}
+
+.app-sidebar .nav-section-title {
+    font-size: .66rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #7C93A8;
+    padding: 1rem 1.1rem .35rem;
+}
+
+.app-sidebar .nav-link {
+    color: #CFE0EC;
+    padding: .55rem 1.1rem;
+    font-size: .86rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    border-left: 3px solid transparent;
+}
+
+.app-sidebar .nav-link i {
+    font-size: 1rem;
+    width: 18px;
+    text-align: center;
+    opacity: .85;
+}
+
+.app-sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, .06);
+    color: #fff;
+}
+
+.app-sidebar .nav-link.active {
+    background: rgba(0, 180, 245, .22);
+    color: #fff;
+    border-left-color: var(--odpc-teal);
+    font-weight: 600;
+}
+
+.app-sidebar .nav-badge {
+    margin-left: auto;
+    background: var(--odpc-teal);
+    color: #fff;
+    font-size: .65rem;
+    font-weight: 700;
+    padding: .05rem .42rem;
+    border-radius: 20px;
+}
+
+.app-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-topbar {
+    background: #fff;
+    border-bottom: 1px solid var(--odpc-line);
+    padding: .7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.app-content {
+    padding: 1.6rem;
+    flex: 1 1 auto;
+}
+
+.breadcrumb-odpc {
+    font-size: .78rem;
+    color: var(--odpc-slate);
+}
+
+.page-title {
+    font-family: var(--odpc-font-display);
+    font-weight: 700;
+    color: var(--odpc-navy-800);
+}
+
+/* KPI Tiles & Status Badges */
+.kpi-tile {
+    background: #fff;
+    border: 1px solid var(--odpc-line);
+    border-radius: var(--odpc-radius-lg);
+    padding: 1.1rem 1.25rem;
+    height: 100%;
+}
+
+.kpi-tile .kpi-num {
+    font-family: var(--odpc-font-title);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--odpc-navy-800);
+}
+
+.badge-status {
+    font-weight: 700;
+    font-size: .7rem;
+    padding: .32rem .65rem;
+    border-radius: 20px;
+    letter-spacing: .02em;
+}
+
+.badge-approved, .badge-resolved, .badge-active, .badge-issued, .badge-closed {
+    background: #E6F4EA;
+    color: #137333;
+}
+
+.badge-pending, .badge-review, .badge-inprogress {
+    background: #FEF7E0;
+    color: #B07F2C;
+}
+
+.badge-rejected, .badge-overdue, .badge-declined {
+    background: #FCE8E6;
+    color: #C5221F;
+}
+
+/* Form Inputs */
+.form-control, .form-select {
+    background: #FFFFFF;
+    border: 1.5px solid var(--odpc-slate-200);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    color: var(--odpc-ink);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--odpc-teal);
+    box-shadow: 0 0 0 3px rgba(0, 180, 245, 0.15);
+    background: #FFFFFF;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 0.84rem;
+    color: var(--odpc-navy-800);
+    margin-bottom: 0.4rem;
+}
