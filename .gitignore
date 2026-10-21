@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+*.worm.sqlite3
+myenv/
